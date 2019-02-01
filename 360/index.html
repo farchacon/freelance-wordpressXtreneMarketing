@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+
+	<title>360</title>
+
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/jquery.simplecolorpicker.css">
+	<script src="js/jquery.simplecolorpicker.js"></script>
+</head>
+
+<body>
+
+<div class="flip" id="tshirt_container">
+	<img src="images/vinotinto/front-white.jpg" class="tshirt_layer flip-1" id="tshirt_layer_1">
+	<img src="images/vinotinto/front-white.png" class="tshirt_layer flip-1" id="tshirt_layer_2">	
+	<img src="images/vinotinto/back-white.jpg" class="tshirt_layer flip-2" id="tshirt_layer_1">
+	<img src="images/vinotinto/back-white.png" class="tshirt_layer flip-2" id="tshirt_layer_2_2">
+</div>
+<div>Color</div>
+<select name="colorpicker-shortlist" id="colorpicker">
+  <option value="#a6f700">Green</option>
+  <option value="#a4bdfc">Blue</option>
+  <option value="#fbd75b">Yellow</option>
+  <option value="#960606">RedWine</option>
+  <option value="#dc2127">Bold red</option>
+  <option value="#e1e1e1">Gray</option>
+</select>
+<div>Talla</div>
+<select name="sizeTshirt">
+  <option value="XS">XS</option>
+  <option value="S">S</option>
+  <option value="M">M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+</select>
+
+<!--
+<div class="flip" id="tshirt_container">
+	<img src="images/white-t-shirt.jpg" class="tshirt_layer" id="tshirt_layer_1">
+	<img src="images/guy.png" class="tshirt_layer" id="tshirt_layer_2">	
+</div>
+
+
+<select name="colorpicker-shortlist" id="colorpicker">
+  <option value="#7bd148"">Green</option>
+  <option value="#5484ed">Bold blue</option>
+  <option value="#a4bdfc">Blue</option>
+  <option value="#46d6db">Turquoise</option>
+  <option value="#7ae7bf">Light green</option>
+  <option value="#51b749">Bold green</option>
+  <option value="#fbd75b">Yellow</option>
+  <option value="#ffb878">Orange</option>
+  <option value="#ff887c">Red</option>
+  <option value="#dc2127">Bold red</option>
+  <option value="#dbadff">Purple</option>
+  <option value="#e1e1e1">Gray</option>
+  <option value="#cabdbf">#cabdbf</option>
+</select>
+
+<div class="flip" id="shoes_container">
+	<img src="images/shoes.jpg" class="shoes_layer" id="shoes_layer_1">
+	<img src="images/shoes.png" class="shoes_layer" id="shoes_layer_2">	
+</div>
+
+<select name="colorpicker-longlist" id="colorpicker2">
+  <option value="#ac725e">#ac725e</option>
+  <option value="#d06b64">#d06b64</option>
+  <option value="#f83a22">#f83a22</option>
+  <option value="#fa573c">#fa573c</option>
+  <option value="#ff7537">#ff7537</option>
+  <option value="#ffad46">#ffad46</option>
+  <option value="#42d692">#42d692</option>
+  <option value="#16a765">#16a765</option>
+  <option value="#7bd148">#7bd148</option>
+  <option value="#b3dc6c">#b3dc6c</option>
+  <option value="#fbe983">#fbe983</option>
+  <option value="#fad165">#fad165</option>
+  <option value="#92e1c0">#92e1c0</option>
+  <option value="#9fe1e7">#9fe1e7</option>
+  <option value="#9fc6e7">#9fc6e7</option>
+  <option value="#4986e7">#4986e7</option>
+  <option value="#9a9cff">#9a9cff</option>
+  <option value="#b99aff">#b99aff</option>
+  <option value="#c2c2c2">#c2c2c2</option>
+  <option value="#cabdbf">#cabdbf</option>
+  <option value="#cca6ac">#cca6ac</option>
+  <option value="#f691b2">#f691b2</option>
+  <option value="#cd74e6">#cd74e6</option>
+  <option value="#a47ae2">#a47ae2</option>
+</select>
+-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.simplecolorpicker.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    /*t-shirt*/
+    $('select[name="colorpicker-shortlist"]').simplecolorpicker('selectColor', '#7bd148');
+    $('#tshirt_layer_2').css('background-color', $('select[name="colorpicker-shortlist"]').val());
+	$('select[name="colorpicker-shortlist"]').on('change', function() {
+    	$('#tshirt_layer_2').css('background-color', $('select[name="colorpicker-shortlist"]').val());
+  	});
+  	  	
+    /*shoes*/ 
+    $('select[name="colorpicker-longlist"]').simplecolorpicker('selectColor', '#ac725e');
+    $('#shoes_layer_2').css('background-color', $('select[name="colorpicker-longlist"]').val());
+	$('select[name="colorpicker-longlist"]').on('change', function() {
+    	$('#shoes_layer_2').css('background-color', $('select[name="colorpicker-longlist"]').val());
+  	}); 	
+})
+</script>
+</body>
+</html>
